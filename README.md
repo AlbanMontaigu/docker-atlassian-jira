@@ -2,7 +2,7 @@
 
 ## Description
 
-A docker image to run **atlassian JIRA**.
+A docker image to run **Atlassian JIRA**.
 
 ## Credits
 
