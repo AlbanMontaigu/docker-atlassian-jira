@@ -56,10 +56,7 @@ RUN set -x \
 
 # Custom jira configuration (isolated to not reproduce each time)
 RUN set -x \
-    && echo -e                 "\njira.home=$JIRA_HOME" >> "${JIRA_INSTALL}/atlassian-jira/WEB-INF/classes/jira-application.properties" \
-    && xmlstarlet              ed --inplace \
-        --update               "Server/Service/Engine/Host/Context/@path" --value "/jira" \
-                               "${JIRA_INSTALL}/conf/server.xml"
+    && echo -e                 "\njira.home=$JIRA_HOME" >> "${JIRA_INSTALL}/atlassian-jira/WEB-INF/classes/jira-application.properties"
 
 
 # PostgreSQL connector for jira (isolated to not reproduce each time)
