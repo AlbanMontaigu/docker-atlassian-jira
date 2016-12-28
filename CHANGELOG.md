@@ -1,4 +1,7 @@
 
+## 7.2.6 (2016-12-28)
+- Update to Jira 7.2.6
+
 ## 7.2.4 (2016-12-03)
 - Update to Jira 7.2.4
 - No more need to have /jira
