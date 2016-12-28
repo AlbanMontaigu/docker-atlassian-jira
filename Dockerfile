@@ -58,12 +58,12 @@ RUN set -x \
 
 # Custom jira configuration (isolated to not reproduce each time)
 RUN set -x \
-    && echo -e                 "\njira.home=$JIRA_HOME" >> "${JIRA_INSTALL}/atlassian-jira/WEB-INF/classes/jira-application.properties"
+    && echo -e "\njira.home=$JIRA_HOME" >> "${JIRA_INSTALL}/atlassian-jira/WEB-INF/classes/jira-application.properties"
 
 
 # PostgreSQL connector for jira (isolated to not reproduce each time)
 RUN set -x \
-    && curl -Ls -o ${JIRA_INSTALL}/lib/postgresql-9.4-1201.jdbc41.jar https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc41.jar
+    && wget -P "${JIRA_INSTALL}/lib/postgresql-9.4-1201.jdbc41.jar" --no-check-certificate "https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc41.jar"
 
 
 # Use the default unprivileged account. This could be considered bad practice
