@@ -45,7 +45,7 @@ RUN set -x \
     && mkdir -p                "${JIRA_INSTALL}/conf/Catalina" \
     && wget -P /tmp --no-check-certificate "https://downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
     && tar xz -f "/tmp/atlassian-jira-software-${JIRA_VERSION}.tar.gz" --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
-    && rm -f                   "/tmp/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
+    && rm -rf "/tmp/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
     && chmod -R 700            "${JIRA_INSTALL}/conf" \
     && chmod -R 700            "${JIRA_INSTALL}/logs" \
     && chmod -R 700            "${JIRA_INSTALL}/temp" \
