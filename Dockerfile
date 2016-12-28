@@ -32,7 +32,7 @@ ENV JIRA_HOME="/var/local/atlassian/jira" \
 # Base system update (isolated to not reproduce each time)
 RUN set -x \
     && apt-get update --quiet \
-    && apt-get install --quiet --yes --no-install-recommends libtcnative-1 xmlstarlet \
+    && apt-get install --quiet --yes --no-install-recommends libtcnative-1 xmlstarlet wget \
     && apt-get clean
 
 
@@ -43,7 +43,9 @@ RUN set -x \
     && chmod -R 700            "${JIRA_HOME}" \
     && chown -R daemon:daemon  "${JIRA_HOME}" \
     && mkdir -p                "${JIRA_INSTALL}/conf/Catalina" \
-    && curl -Ls                "https://downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-${JIRA_VERSION}.tar.gz" | tar -xz --directory "${JIRA_INSTALL}" --strip-components=1 --no-same-owner \
+    && wget -P /tmp            "https://downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
+    && tar -xzf --directory    "${JIRA_INSTALL}" --strip-components=1 --no-same-owner "/tmp/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
+    && rm -f                   "/tmp/atlassian-jira-software-${JIRA_VERSION}.tar.gz" \
     && chmod -R 700            "${JIRA_INSTALL}/conf" \
     && chmod -R 700            "${JIRA_INSTALL}/logs" \
     && chmod -R 700            "${JIRA_INSTALL}/temp" \
