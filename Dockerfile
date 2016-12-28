@@ -63,7 +63,7 @@ RUN set -x \
 
 # PostgreSQL connector for jira (isolated to not reproduce each time)
 RUN set -x \
-    && wget -P "${JIRA_INSTALL}/lib/postgresql-9.4-1201.jdbc41.jar" --no-check-certificate "https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc41.jar"
+    && wget -P "${JIRA_INSTALL}/lib/postgresql-9.4-1201.jdbc41.jar" --no-check-certificate "https://jdbc.postgresql.org/download/postgresql-9.4-1201.jdbc41.jar" -nv
 
 
 # Use the default unprivileged account. This could be considered bad practice
