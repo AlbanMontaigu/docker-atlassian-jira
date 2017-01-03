@@ -1,4 +1,7 @@
 
+## 7.2.7 (2017-01-03)
+- Update to Jira 7.2.7
+
 ## 7.2.6 (2016-12-28)
 - Update to Jira 7.2.6
 - Download archive process changed since the old one is now broken

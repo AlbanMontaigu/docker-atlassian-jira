@@ -25,7 +25,7 @@ MAINTAINER alban.montaigu@gmail.com
 # Configuration variables.
 ENV JIRA_HOME="/var/local/atlassian/jira" \
     JIRA_INSTALL="/usr/local/atlassian/jira" \
-    JIRA_VERSION="7.2.6" \
+    JIRA_VERSION="7.2.7" \
     CATALINA_OPTS="-Xms128m -Xmx1024m -Datlassian.plugins.enable.wait=300"
 
 
