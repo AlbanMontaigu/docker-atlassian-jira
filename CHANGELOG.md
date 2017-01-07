@@ -1,4 +1,7 @@
 
+## 7.3.0 (2017-01-03)
+- Update to Jira 7.3.0
+
 ## 7.2.7 (2017-01-03)
 - Update to Jira 7.2.7
 - Apt list rm added to save space
